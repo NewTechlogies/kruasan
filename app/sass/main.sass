@@ -1,0 +1,87 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+
+.bg_main
+	background: linear-gradient(to right, #ffffff 35%, #0e0a06 35%)
+.buttoner
+	text-decoration: none
+	display: inline-block
+	text-align: center
+	padding: .5rem 1rem .5rem 1rem 
+	border: solid 3px #f26422
+	font: 18px Arial, Helvetica, sans-serif 
+	font-weight: bold 
+	color: #fff
+	background-color: transparent
+	transition:  color 0.43s linear
+	&:hover
+		border: none 
+		background: #f26422
+		border: solid 3px #f26422
+		text-decoration: none
+		color: #fff
+	&:active
+		background: #f26422
+		border: solid 3px #f26422
+		color: #fff
+.container 
+  display: grid
+  grid-template-columns: repeat(12, 1fr)
+.header
+	grid-column: span 12
+	background-color: #f26422
+	color: #fff
+.navigation-menu
+	background-color: yellow
+	grid-column: span 12
+	& ul
+		display: grid
+		grid-auto-flow: reverse
+		grid-template-columns: repeat(12, auto)
+		grid-template-rows: 1fr
+		grid-column-gap: 1rem
+	& ul li
+		list-style: none
+.main-content
+	grid-column: span 12
+.footer
+	grid-column: span 12
+
+@import "media" // Always at the end
