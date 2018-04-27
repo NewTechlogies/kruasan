@@ -1,0 +1,180 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: $default-font
+	overflow-x: hidden
+	color: $text
+	input, textarea
+		border: #666 1px solid
+		outline: none
+		&:focus:required:invalid
+			border-color: red
+		&:required:valid
+			border-color: green
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+		width: 100%
+
+.text-center
+	text-align: center
+
+b, strong
+	font-weight: bold
+.bg_main
+	background: linear-gradient(to right, #ffffff 35%, #0e0a06 35%)
+.buttoner
+	display: inline-block
+	text-align: center
+	padding: 1rem 4.8rem 1rem 4.8rem 
+	border: solid 3px #f26422
+	font: 1.5rem Arial, Helvetica, sans-serif 
+	font-weight: bold 
+	color: #fff
+	background-color: transparent
+	transition:  color 0.43s linear
+	&:hover
+		border: none 
+		background: #f26422
+		border: solid 3px #f26422
+		text-decoration: none
+		color: #fff
+	&:active
+		background: #f26422
+		border: solid 3px #f26422
+		color: #fff
+
+.header
+	background-color: #f26422
+	color: #fff
+	
+
+//хидер шапка ссылка
+.header-container
+	display: grid
+	grid-template-columns: repeat(3, auto)
+	grid-template-rows: 1fr
+	justify-content: space-between
+	align-items: center
+	padding: 0 15px 0 15px
+	margin: auto
+	height: 3.1rem
+	max-width: 1140px
+	& p
+		margin: 0
+	& a
+		text-decoration: none
+		color: #0e0a06
+		font-weight: bold
+		transition: .5s
+		&:hover
+			color: #fff
+//менюшка под хидером
+.navigation-menu
+	display: grid
+	& ul
+		display: grid
+		grid-template-columns: repeat(6, auto)
+		grid-template-rows: auto
+		justify-self: end
+		padding: 0
+		margin: 0
+		height: 3.1rem
+		align-items: center
+		grid-gap: 2rem
+	& ul li
+		list-style: none
+	& ul li a
+		color: #fff
+		position: relative
+		text-decoration: none
+	& ul li a:before
+		display: block
+		position: absolute
+		content: ""
+		height: 2px
+		width: 0
+		background-color: #f26422
+		transition: width .5s ease-in-out, left .5s ease-in-out
+		left: 50%
+		bottom: 0
+	& ul li a:after
+		display: block
+		position: absolute
+		content: ""
+		height: 2px
+		width: 0
+		background-color: #f26422
+		transition: width .5s ease-in-out
+		left: 50%
+		bottom: 0
+	& ul li a:hover:before	
+		width: 50%
+		left: 0
+	& ul li a:hover:after
+		width: 50%
+//слайдер начало
+.slick-container
+	padding-right: 5rem
+.slick-item1
+	display: grid
+	height: 550px
+	background-image: url("../img/bg_main.png")
+	background-size: contain
+	background-position: center center
+	background-repeat: no-repeat
+.slick-buttons
+	color: #fff
+	justify-self: end
+	align-self: end
+	margin-bottom: 3rem
+	text-align: right
+	& a
+		margin-right: 2rem
+		align-self: end
+.slick-buttons h1
+	font-size: 4.875rem
+	margin-right: 5rem
+	line-height: .8
+	letter-spacing: .4rem
+	
+.slick-buttons h6
+	font-size: 1.5rem
+	margin-right: 5rem
+	margin-bottom: 3rem
+	font-weight: regular
+	letter-spacing: .2rem
+
+
+//слайдер конец
+
+
+
+
+
+
+
+
+.main-content
+	justify-self: center
+.footer
+	width: 100%
+
+
+@import "media" // Always at the end
